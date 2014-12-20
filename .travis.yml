@@ -1,13 +1,19 @@
 language: ruby
 rvm:
-  - 2.1
+- 2.1
 before_install:
-  - gem install rubocop
-script:
-  rubocop --fail-level=W
+- gem install rubocop
+script: rubocop --fail-level=W
 notifications:
   email:
-    - ogataken@gmail.com
+  - ogataken@gmail.com
 branches:
   only:
-    - master
+  - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: IrPvHMV1WymA+NWn6NKufpsEpEOT3+pJR2wPFawZG9L0UiyDgUVMi2x8oIBMxfHS780dnyPCDYAH7S0mVUVfa9eEapNq9BAy9k1ILjJsxEyy3ZvsgKTdLiAcopn3LXFw85imyKIk95cW860C74F1LNpT2JzOEynvIbvYBlKn6wI=
+  app: twist-tachikomaio
+  on:
+    repo: tachikomaio/twist-hubot
