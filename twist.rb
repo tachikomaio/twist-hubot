@@ -47,7 +47,7 @@ def build_message(payload)
   user_screen_name = payload['user']['screen_name']
   status = payload['text']
   status_url = "https://twitter.com/#{payload['user']['screen_name']}/status/#{payload['id_str']}"
-  [user_image, user_screen_name, status, status_url].join("\n")
+  [user_screen_name, status, user_image, status_url].join("\n")
 end
 
 EM.run do
